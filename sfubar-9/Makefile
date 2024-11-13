@@ -18,7 +18,7 @@ RR=		riffraff-7
 SF=		sfubar-9
 OBJS=		trap.o sfutil.o aifutil.o wavutil.o
 
-CC=		$(TOOLDIR)gcc
+CC=		$(TOOLDIR)cc
 AR=		$(TOOLDIR)ar
 RANLIB=		$(TOOLDIR)ranlib
 STRIP=		$(TOOLDIR)strip

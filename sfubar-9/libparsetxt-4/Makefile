@@ -2,7 +2,7 @@ PREFIX?=.
 CFLAGS?=	-O0 -g -Wall -I$(PREFIX)/include
 
 AR=$(TOOLDIR)ar
-CC=$(TOOLDIR)gcc
+CC=$(TOOLDIR)cc
 RANLIB=$(TOOLDIR)ranlib
 
 PT=parsetxt-4
