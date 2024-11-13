@@ -26,7 +26,7 @@ STRIP=		$(TOOLDIR)strip
 CFLAGS+=	-Wall -I$(PREFIX)/include
 LDLIBS+=	-L$(PREFIX)/lib -l$(SF) -lm
 
-all:	sfubar gensine
+all:	hier sfubar gensine
 
 $(PREFIX)/lib/lib$(SF).a: install-includes $(PREFIX)/lib/lib$(RR).a $(OBJS)
 	cp ${PREFIX}/lib/lib${PT}.a ${PREFIX}/lib/lib${RR}.a ${OBJS} tmp/ ; \
@@ -53,10 +53,13 @@ $(PREFIX)/lib/lib$(RR).a:
 	cd ${SRCDIR}/lib${RR} && \
 	PREFIX=${PREFIX} CFLAGS="${CFLAGS}" TOOLDIR=${TOOLDIR} ${MAKE} install
 
+hier:
+	mkdir -p tmp bin lib 
 clean:
 	rm -f *.o sfubar gensine *.core bin/ieee80-test tmp/* lib/*
 	cd ${SRCDIR}/lib${RR} && \
 	PREFIX=${PREFIX} TOOLDIR=${TOOLDIR} ${MAKE} clean
+	rm -rf bin tmp lib
 
 test:	all
 	chmod u+x ./test.sh
