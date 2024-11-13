@@ -272,12 +272,12 @@ void txt_to_aif(char *infile, char *outfile)
   txt_t *txt;
   aif_t *aif = aif_new();
   char *str;
-  myDWORD timestamp;
-  myWORD numChannels;
-  myDWORD numSampleFrames;
-  myWORD sampleSize;
+  myDWORD timestamp = 0;
+  myWORD numChannels = 0;
+  myDWORD numSampleFrames = 0;
+  myWORD sampleSize = 0;
   myIEEE80 sampleRate;
-  int n;
+  int n = 0;
   long ssnd_size;
   myWORD samplePointSize;
   char *compressionType;
